@@ -31,8 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aplicaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Resultantes = new System.Windows.Forms.ToolStripMenuItem();
+            this.MecanicaGeral = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ForcaResultante = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,17 +51,18 @@
             // aplicaçõesToolStripMenuItem
             // 
             this.aplicaçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Resultantes});
+            this.MecanicaGeral});
             this.aplicaçõesToolStripMenuItem.Name = "aplicaçõesToolStripMenuItem";
             this.aplicaçõesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.aplicaçõesToolStripMenuItem.Text = "Aplicações";
             // 
-            // Resultantes
+            // MecanicaGeral
             // 
-            this.Resultantes.Name = "Resultantes";
-            this.Resultantes.Size = new System.Drawing.Size(129, 22);
-            this.Resultantes.Text = "Resultante";
-            this.Resultantes.Click += new System.EventHandler(this.Resultantes_Click);
+            this.MecanicaGeral.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ForcaResultante});
+            this.MecanicaGeral.Name = "MecanicaGeral";
+            this.MecanicaGeral.Size = new System.Drawing.Size(180, 22);
+            this.MecanicaGeral.Text = "Mecânica Geral";
             // 
             // sairToolStripMenuItem
             // 
@@ -68,6 +70,13 @@
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
+            // 
+            // ForcaResultante
+            // 
+            this.ForcaResultante.Name = "ForcaResultante";
+            this.ForcaResultante.Size = new System.Drawing.Size(180, 22);
+            this.ForcaResultante.Text = "Força Resultante";
+            this.ForcaResultante.Click += new System.EventHandler(this.ForcaResultante_Click);
             // 
             // Menu
             // 
@@ -93,8 +102,9 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aplicaçõesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem Resultantes;
+        private System.Windows.Forms.ToolStripMenuItem MecanicaGeral;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ForcaResultante;
     }
 }
 
