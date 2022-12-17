@@ -19,6 +19,18 @@ namespace MecanicaGeral.Calculo
         }
 
         /// <summary>
+        /// Calcula o tamanho (Módulo) a partir das componentes X, Y e Z
+        /// </summary>
+        /// <param name="Components">Componentes para o módulo</param>
+        /// <returns>Um <b>double</b> com o tamanho do vetor</returns>
+
+        public static double GetModule(double[] Components)
+        {
+            double Module = Math.Sqrt(Components[0] * Components[0] + Components[1] * Components[1] + Components[2] * Components[2]);
+            return Module;
+        }
+
+        /// <summary>
         /// Calcula o tamanho (Módulo) de um vetor
         /// </summary>
         /// <param name="Vector">Objeto do tipo <b>Vetor</b></param>
