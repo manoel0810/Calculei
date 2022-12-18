@@ -59,8 +59,9 @@ namespace MecanicaGeral.Resultantes
             var Vetor = Vector.Vector;
             Vetores.Add(Vetor);
             Vector.Dispose();
-
-            LoadDGV(Vetores);
+            
+            if(Vetor != null)
+                LoadDGV(Vetores);
         }
 
         private void Btn_Prop_Click(object sender, EventArgs e)
@@ -88,6 +89,9 @@ namespace MecanicaGeral.Resultantes
 
         private void Btn_Apagar_Click(object sender, EventArgs e)
         {
+            if (Dgv_Vetores.SelectedRows.Count <= 0)
+                return;
+
             int index = -1;
             for (int i = 0; i < Vetores.Count; i++)
             {
@@ -105,6 +109,9 @@ namespace MecanicaGeral.Resultantes
 
         private void Btn_Calcular_Click(object sender, EventArgs e)
         {
+            if (Dgv_Vetores.Rows.Count == 0)
+                return;
+
             double Rx = 0, Ry = 0, Rz = 0;
             var Convencao = VariaveisGlobais.Unidades.UnidadeResultante;
 
@@ -147,7 +154,7 @@ namespace MecanicaGeral.Resultantes
             ArcY = Math.Acos(CossY) * 180 / Math.PI;
             ArcZ = Math.Acos(CossZ) * 180 / Math.PI;
 
-            Tb_Resultante.Text = $"{Module}({(CossX > 0 ? "+" : "")}{CossX}I{(CossX > 0 ? "+" : "")}{CossY}J{(CossX > 0 ? "+" : "")}{CossZ}K)" + (Convencao == 0 ? "Kn" : "N");
+            Tb_Resultante.Text = $"{Module} ({(CossX >= 0 ? "+" : "")}{CossX}i {(CossX >= 0 ? "+" : "")}{CossY}j {(CossX >= 0 ? "+" : "")}{CossZ}k) * " + (Convencao == 0 ? "Kn" : "N");
             Tb_CosX.Text = CossX.ToString();
             Tb_CosY.Text = CossY.ToString();
             Tb_CosZ.Text = CossZ.ToString();
@@ -161,6 +168,53 @@ namespace MecanicaGeral.Resultantes
             Tb_Rz.Text = Rz.ToString();
 
             Tb_Magnitude.Text = Module.ToString();
+
+            if (Cb_MomentoInercia.Checked)
+                CalcularMomento();
+        }
+
+        private void CalcularMomento()
+        {
+            foreach (var v in Vetores)
+                v.SetMoment = AlgebraVetorial.GetMomento(v, VariaveisGlobais.PontoEstudo);
+
+            double[] IJK = new double[] { 0, 0, 0 };
+            foreach (var v in Vetores)
+            {
+                IJK[0] += v.GetMoment[0];
+                IJK[1] += v.GetMoment[1];
+                IJK[2] += v.GetMoment[2];
+            }
+
+            DataTable VetorInfo = new DataTable();
+            VetorInfo.Columns.Add("name");
+            VetorInfo.Columns.Add("index");
+
+            for (int i = 0; i < Vetores.Count; i++)
+            {
+                DataRow Row = VetorInfo.NewRow();
+                Row["name"] = Vetores[i].Name;
+                Row["index"] = i;
+
+                VetorInfo.Rows.Add(Row);
+            }
+
+            Cb_Vetores.DataSource = VetorInfo;
+            Cb_Vetores.DisplayMember = "name";
+            Cb_Vetores.ValueMember = "index";
+
+            Lb_Px.Text = VariaveisGlobais.PontoEstudo.GetX.ToString();
+            Lb_Py.Text = VariaveisGlobais.PontoEstudo.GetY.ToString();
+            Lb_Pz.Text = VariaveisGlobais.PontoEstudo.GetZ.ToString();
+
+            Tb_MomentoGeral.Text = MontarMomentoString(IJK);
+        }
+
+        private string MontarMomentoString(double[] Momentos)
+        {
+            string Unidade = VariaveisGlobais.Unidades.UnidadeMomento == ConvencaoUnidades.MomentunUnit.KnM ? "KnM" : "NCm";
+            string Formato = $"({(Momentos[0] >= 0 ? "+" : "")} {Momentos[0]}i {(Momentos[1] >= 0 ? "+" : "")} {Momentos[1]}j {(Momentos[2] >= 0 ? "+" : "")} {Momentos[2]}k) * {Unidade}";
+            return Formato;
         }
 
         private void ConvençãoDeUnidadesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -168,6 +222,43 @@ namespace MecanicaGeral.Resultantes
             Convencoes Unidades = new Convencoes();
             Unidades.ShowDialog();
             Unidades.Dispose();
+        }
+
+        private void LK_Definir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PontoEstudo PE = new PontoEstudo();
+            PE.ShowDialog();
+            PE.Dispose();
+        }
+
+        private void Cb_MomentoInercia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Cb_MomentoInercia.Checked)
+            {
+                LK_Definir.Visible = true;
+                Painel_MI.Enabled = true;
+            }
+            else
+            {
+                LK_Definir.Visible = false;
+                Painel_MI.Enabled = false;
+            }
+        }
+
+        private void Cb_Vetores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Cb_Vetores.SelectedIndex > -1)
+            {
+                var Components = Vetores[Cb_Vetores.SelectedIndex].GetMoment;
+                Tb_MomentoXVetor.Text = MontarMomentoString(Components);
+                Lb_MomentoXVetor.Text = $"Momento para - {Vetores[Cb_Vetores.SelectedIndex].Name}";
+            }
+        }
+
+        private void GerarSaida_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Função em desenvolvimento...");
+            return;
         }
     }
 }

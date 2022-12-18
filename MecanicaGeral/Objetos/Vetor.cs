@@ -9,6 +9,7 @@ namespace MecanicaGeral.Objetos
         private readonly List<Ponto> Pontos = new List<Ponto>();
         private double[] CossinDirector = new double[3];
         private double[] Componentes = new double[3];
+        private double[] Momentus = new double[3];
 
         /// <summary>
         /// Carrega as componentes do vetor
@@ -97,8 +98,15 @@ namespace MecanicaGeral.Objetos
         /// <summary>
         /// Magnitude da força
         /// </summary>
-        public double Magnitude
-        { get; set; }
+        public double Magnitude { get; set; }
+        /// <summary>
+        /// Define os momentos deste vetor em relação a um ponto P declarado na hora do cálculo
+        /// </summary>
+        public double[] SetMoment { set { Momentus = value; } }
+        /// <summary>
+        /// Retorna as componentes do memento deste vetor
+        /// </summary>
+        public double[] GetMoment { get { return Momentus; } }
         /// <summary>
         /// Unidade de medida da força em Kn ou N
         /// </summary>

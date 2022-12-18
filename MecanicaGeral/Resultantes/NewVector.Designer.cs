@@ -73,9 +73,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(187, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Ponto Final";
+            this.label2.Text = "Ponto Final*";
             // 
             // Tb_Theta
             // 
@@ -116,7 +116,7 @@
             this.Cb_FU.Items.AddRange(new object[] {
             "N",
             "Kn"});
-            this.Cb_FU.Location = new System.Drawing.Point(170, 61);
+            this.Cb_FU.Location = new System.Drawing.Point(170, 63);
             this.Cb_FU.Name = "Cb_FU";
             this.Cb_FU.Size = new System.Drawing.Size(53, 21);
             this.Cb_FU.TabIndex = 5;
@@ -124,11 +124,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(167, 46);
+            this.label7.Location = new System.Drawing.Point(167, 48);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 5;
-            this.label7.Text = "F. Unit";
+            this.label7.Text = "F. Unit*";
             // 
             // Btn_Adicionar
             // 
@@ -142,6 +142,7 @@
             // 
             // Tb_Nome
             // 
+            this.Tb_Nome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.Tb_Nome.Location = new System.Drawing.Point(284, 63);
             this.Tb_Nome.Name = "Tb_Nome";
             this.Tb_Nome.Size = new System.Drawing.Size(78, 20);
@@ -152,18 +153,18 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(281, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Identificação";
+            this.label3.Text = "Identificação*";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(222, 47);
+            this.label5.Location = new System.Drawing.Point(222, 48);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 5;
-            this.label5.Text = "M. Unit";
+            this.label5.Text = "M. Unit*";
             // 
             // Cb_MU
             // 
@@ -171,7 +172,7 @@
             this.Cb_MU.Items.AddRange(new object[] {
             "Cm",
             "M"});
-            this.Cb_MU.Location = new System.Drawing.Point(225, 62);
+            this.Cb_MU.Location = new System.Drawing.Point(225, 63);
             this.Cb_MU.Name = "Cb_MU";
             this.Cb_MU.Size = new System.Drawing.Size(53, 21);
             this.Cb_MU.TabIndex = 6;
@@ -198,6 +199,7 @@
             this.Controls.Add(this.Tb_PI);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewVector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo Vetor";

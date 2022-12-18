@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -96,6 +96,12 @@
     <Compile Include="Resultantes\NewVector.Designer.cs">
       <DependentUpon>NewVector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resultantes\PontoEstudo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resultantes\PontoEstudo.Designer.cs">
+      <DependentUpon>PontoEstudo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resultantes\Propriedades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resultantes\NewVector.resx">
       <DependentUpon>NewVector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resultantes\PontoEstudo.resx">
+      <DependentUpon>PontoEstudo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resultantes\Propriedades.resx">
       <DependentUpon>Propriedades.cs</DependentUpon>

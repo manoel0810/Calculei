@@ -1,4 +1,5 @@
 ﻿using MecanicaGeral.Objetos;
+using MecanicaGeral.Resultantes.Classes;
 using System;
 
 namespace MecanicaGeral.Calculo
@@ -110,6 +111,54 @@ namespace MecanicaGeral.Calculo
         public static double GetAngleByCossin(double Cossin)
         {
             return (Math.Acos(Cossin) * 180) / Math.PI;
+        }
+
+        /// <summary>
+        /// Calcula o momento de uma força F, sob um ponto P
+        /// </summary>
+        /// <param name="Vector">Objeto <b>Vetor</b></param>
+        /// <param name="P">Ponto de estudo</param>
+        /// <returns>double[] com os momentos em i, j e k, respectivamente no vetor double[]</returns>
+
+        public static double[] GetMomento(Vetor Vector, Ponto P)
+        {
+            double Ri, Rj, Rk;
+
+            if (VariaveisGlobais.Unidades.UnidadeMomento == ConvencaoUnidades.MomentunUnit.KnM)
+            {
+                Ri = Math.Abs(Vector.GetPoint(0).GetX * (Vector.UnidadeDeMedida == MetricUnit.M ? 1 : (1 / 100)) - P.GetX);    //i
+                Rj = Math.Abs(Vector.GetPoint(0).GetY * (Vector.UnidadeDeMedida == MetricUnit.M ? 1 : (1 / 100)) - P.GetY);    //j
+                Rk = Math.Abs(Vector.GetPoint(0).GetZ * (Vector.UnidadeDeMedida == MetricUnit.M ? 1 : (1 / 100)) - P.GetZ);    //k
+            }
+            else
+            {
+                Ri = Math.Abs(Vector.GetPoint(0).GetX * (Vector.UnidadeDeMedida == MetricUnit.Cm ? 1 : 100) - P.GetX);    //i
+                Rj = Math.Abs(Vector.GetPoint(0).GetY * (Vector.UnidadeDeMedida == MetricUnit.Cm ? 1 : 100) - P.GetY);    //j
+                Rk = Math.Abs(Vector.GetPoint(0).GetZ * (Vector.UnidadeDeMedida == MetricUnit.Cm ? 1 : 100) - P.GetZ);    //k
+            }
+
+            double Fx, Fy, Fz;
+
+            if (VariaveisGlobais.Unidades.UnidadeMomento == ConvencaoUnidades.MomentunUnit.KnM)
+            {
+                Fx = Vector.GetComponents[0] * (Vector.UnidadeDeForca == ForceUnit.Kn ? 1 : 1 / 1000);
+                Fy = Vector.GetComponents[1] * (Vector.UnidadeDeForca == ForceUnit.Kn ? 1 : 1 / 1000);
+                Fz = Vector.GetComponents[2] * (Vector.UnidadeDeForca == ForceUnit.Kn ? 1 : 1 / 1000);
+            }
+            else
+            {
+                Fx = Vector.GetComponents[0] * (Vector.UnidadeDeForca == ForceUnit.N ? 1 : 1000);
+                Fy = Vector.GetComponents[1] * (Vector.UnidadeDeForca == ForceUnit.N ? 1 : 1000);
+                Fz = Vector.GetComponents[2] * (Vector.UnidadeDeForca == ForceUnit.N ? 1 : 1000);
+            }
+
+            double Mi, Mj, Mk;
+
+            Mi = Rj * Fz - Rk * Fy;
+            Mj = Rk * Fx - Ri * Fz;
+            Mk = Ri * Fy - Rj * Fx;
+
+            return new double[] { Mi, Mj, Mk };
         }
     }
 

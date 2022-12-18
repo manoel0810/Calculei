@@ -40,7 +40,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Btn_Voltar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.Tb_Modulo = new System.Windows.Forms.TextBox();
             this.Tb_FU = new System.Windows.Forms.TextBox();
             this.Tb_Magnitude = new System.Windows.Forms.TextBox();
+            this.Btn_Voltar = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -202,16 +202,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(393, 211);
             this.panel2.TabIndex = 3;
-            // 
-            // Btn_Voltar
-            // 
-            this.Btn_Voltar.Location = new System.Drawing.Point(590, 229);
-            this.Btn_Voltar.Name = "Btn_Voltar";
-            this.Btn_Voltar.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Voltar.TabIndex = 4;
-            this.Btn_Voltar.Text = "Voltar";
-            this.Btn_Voltar.UseVisualStyleBackColor = true;
-            this.Btn_Voltar.Click += new System.EventHandler(this.Btn_Voltar_Click);
             // 
             // label15
             // 
@@ -389,15 +379,25 @@
             this.Tb_Magnitude.Size = new System.Drawing.Size(100, 20);
             this.Tb_Magnitude.TabIndex = 0;
             // 
+            // Btn_Voltar
+            // 
+            this.Btn_Voltar.Location = new System.Drawing.Point(590, 229);
+            this.Btn_Voltar.Name = "Btn_Voltar";
+            this.Btn_Voltar.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Voltar.TabIndex = 4;
+            this.Btn_Voltar.Text = "Voltar";
+            this.Btn_Voltar.UseVisualStyleBackColor = true;
+            this.Btn_Voltar.Click += new System.EventHandler(this.Btn_Voltar_Click);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(22, 3);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(129, 18);
+            this.label16.Size = new System.Drawing.Size(136, 18);
             this.label16.TabIndex = 4;
-            this.label16.Text = "Posição e angulo";
+            this.label16.Text = "Posição e direção";
             // 
             // label17
             // 
