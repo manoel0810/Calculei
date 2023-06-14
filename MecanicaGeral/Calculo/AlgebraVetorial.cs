@@ -124,6 +124,7 @@ namespace MecanicaGeral.Calculo
         {
             double Ri, Rj, Rk;
 
+
             if (VariaveisGlobais.Unidades.UnidadeMomento == ConvencaoUnidades.MomentunUnit.KnM)
             {
                 Ri = Math.Abs(Vector.GetPoint(0).GetX * (Vector.UnidadeDeMedida == MetricUnit.M ? 1 : (1d / 100d)) - P.GetX);    //i

@@ -59,8 +59,8 @@ namespace MecanicaGeral.Resultantes
             var Vetor = Vector.Vector;
             Vetores.Add(Vetor);
             Vector.Dispose();
-            
-            if(Vetor != null)
+
+            if (Vetor != null)
                 LoadDGV(Vetores);
         }
 
@@ -203,9 +203,9 @@ namespace MecanicaGeral.Resultantes
             Cb_Vetores.DisplayMember = "name";
             Cb_Vetores.ValueMember = "index";
 
-            Lb_Px.Text = VariaveisGlobais.PontoEstudo.GetX.ToString();
-            Lb_Py.Text = VariaveisGlobais.PontoEstudo.GetY.ToString();
-            Lb_Pz.Text = VariaveisGlobais.PontoEstudo.GetZ.ToString();
+            Lb_Px.Text = $"{VariaveisGlobais.PontoEstudo.GetX} {(VariaveisGlobais.Unidades.UnidadeMomento == ConvencaoUnidades.MomentunUnit.KnM ? "M" : "Cm")}";
+            Lb_Py.Text = $"{VariaveisGlobais.PontoEstudo.GetY} {(VariaveisGlobais.Unidades.UnidadeMomento == ConvencaoUnidades.MomentunUnit.KnM ? "M" : "Cm")}";
+            Lb_Pz.Text = $"{VariaveisGlobais.PontoEstudo.GetZ} {(VariaveisGlobais.Unidades.UnidadeMomento == ConvencaoUnidades.MomentunUnit.KnM ? "M" : "Cm")}";
 
             Tb_MomentoGeral.Text = MontarMomentoString(IJK);
         }
