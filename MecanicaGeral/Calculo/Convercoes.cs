@@ -31,7 +31,7 @@
         /// Converte o valor passado em <b>Value</b> para a unidade expecificada em <b>Unit</b>
         /// </summary>
         /// <param name="Value">Valor que será convertido</param>
-        /// <param name="Unit">Unidade final<</param>
+        /// <param name="Unit">Unidade final</param>
         /// <returns>Valor convetido para a unidade final métrica</returns>
 
         public static double ParseUnit(double Value, Unidade Unit)

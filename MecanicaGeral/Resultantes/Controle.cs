@@ -257,8 +257,23 @@ namespace MecanicaGeral.Resultantes
 
         private void GerarSaida_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Função em desenvolvimento...");
+            MessageBox.Show("Função em desenvolvimento...", "Calculei", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
+        }
+
+        private void Controle_Load(object sender, EventArgs e)
+        {
+            KeyPreview = true;
+        }
+
+        private void Controle_KeyDown(object sender, KeyEventArgs e)
+        {
+            /*
+             
+             if (e.Control && e.KeyCode == Keys.E)
+                NovoVetor.PerformClick();
+             
+             */
         }
     }
 }

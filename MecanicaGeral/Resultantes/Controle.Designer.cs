@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.NovoVetor = new System.Windows.Forms.ToolStripMenuItem();
             this.GerarSaida = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,21 +63,21 @@
             this.Btn_Calcular = new System.Windows.Forms.Button();
             this.Btn_Prop = new System.Windows.Forms.Button();
             this.Painel_MI = new System.Windows.Forms.Panel();
+            this.Vetor = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.Lb_MomentoXVetor = new System.Windows.Forms.Label();
+            this.Cb_Vetores = new System.Windows.Forms.ComboBox();
+            this.Tb_MomentoGeral = new System.Windows.Forms.TextBox();
+            this.Tb_MomentoXVetor = new System.Windows.Forms.TextBox();
+            this.Lb_Pz = new System.Windows.Forms.Label();
+            this.Lb_Py = new System.Windows.Forms.Label();
+            this.Lb_Px = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.Cb_MomentoInercia = new System.Windows.Forms.CheckBox();
             this.LK_Definir = new System.Windows.Forms.LinkLabel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.Lb_Px = new System.Windows.Forms.Label();
-            this.Lb_Py = new System.Windows.Forms.Label();
-            this.Lb_Pz = new System.Windows.Forms.Label();
-            this.Tb_MomentoXVetor = new System.Windows.Forms.TextBox();
-            this.Tb_MomentoGeral = new System.Windows.Forms.TextBox();
-            this.Cb_Vetores = new System.Windows.Forms.ComboBox();
-            this.Lb_MomentoXVetor = new System.Windows.Forms.Label();
-            this.Vetor = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Vetores)).BeginInit();
             this.panel1.SuspendLayout();
@@ -129,14 +129,14 @@
             // 
             this.Dgv_Vetores.AllowUserToAddRows = false;
             this.Dgv_Vetores.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Vetores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Vetores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Dgv_Vetores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_Vetores.EnableHeadersVisualStyles = false;
             this.Dgv_Vetores.Location = new System.Drawing.Point(12, 39);
@@ -428,6 +428,114 @@
             this.Painel_MI.Size = new System.Drawing.Size(647, 100);
             this.Painel_MI.TabIndex = 7;
             // 
+            // Vetor
+            // 
+            this.Vetor.AutoSize = true;
+            this.Vetor.Location = new System.Drawing.Point(521, 14);
+            this.Vetor.Name = "Vetor";
+            this.Vetor.Size = new System.Drawing.Size(32, 13);
+            this.Vetor.TabIndex = 4;
+            this.Vetor.Text = "Vetor";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(149, 51);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(129, 13);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Momento geral das forças";
+            // 
+            // Lb_MomentoXVetor
+            // 
+            this.Lb_MomentoXVetor.AutoSize = true;
+            this.Lb_MomentoXVetor.Location = new System.Drawing.Point(149, 14);
+            this.Lb_MomentoXVetor.Name = "Lb_MomentoXVetor";
+            this.Lb_MomentoXVetor.Size = new System.Drawing.Size(126, 13);
+            this.Lb_MomentoXVetor.TabIndex = 4;
+            this.Lb_MomentoXVetor.Text = "Momento para - <vector>";
+            // 
+            // Cb_Vetores
+            // 
+            this.Cb_Vetores.FormattingEnabled = true;
+            this.Cb_Vetores.Location = new System.Drawing.Point(521, 29);
+            this.Cb_Vetores.Name = "Cb_Vetores";
+            this.Cb_Vetores.Size = new System.Drawing.Size(116, 21);
+            this.Cb_Vetores.TabIndex = 3;
+            this.Cb_Vetores.SelectedIndexChanged += new System.EventHandler(this.Cb_Vetores_SelectedIndexChanged);
+            // 
+            // Tb_MomentoGeral
+            // 
+            this.Tb_MomentoGeral.Location = new System.Drawing.Point(152, 65);
+            this.Tb_MomentoGeral.Name = "Tb_MomentoGeral";
+            this.Tb_MomentoGeral.ReadOnly = true;
+            this.Tb_MomentoGeral.Size = new System.Drawing.Size(485, 20);
+            this.Tb_MomentoGeral.TabIndex = 2;
+            this.Tb_MomentoGeral.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Tb_MomentoXVetor
+            // 
+            this.Tb_MomentoXVetor.Location = new System.Drawing.Point(152, 29);
+            this.Tb_MomentoXVetor.Name = "Tb_MomentoXVetor";
+            this.Tb_MomentoXVetor.ReadOnly = true;
+            this.Tb_MomentoXVetor.Size = new System.Drawing.Size(363, 20);
+            this.Tb_MomentoXVetor.TabIndex = 2;
+            this.Tb_MomentoXVetor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Lb_Pz
+            // 
+            this.Lb_Pz.AutoSize = true;
+            this.Lb_Pz.Location = new System.Drawing.Point(56, 58);
+            this.Lb_Pz.Name = "Lb_Pz";
+            this.Lb_Pz.Size = new System.Drawing.Size(30, 13);
+            this.Lb_Pz.TabIndex = 1;
+            this.Lb_Pz.Text = "<pz>";
+            // 
+            // Lb_Py
+            // 
+            this.Lb_Py.AutoSize = true;
+            this.Lb_Py.Location = new System.Drawing.Point(56, 43);
+            this.Lb_Py.Name = "Lb_Py";
+            this.Lb_Py.Size = new System.Drawing.Size(30, 13);
+            this.Lb_Py.TabIndex = 1;
+            this.Lb_Py.Text = "<py>";
+            // 
+            // Lb_Px
+            // 
+            this.Lb_Px.AutoSize = true;
+            this.Lb_Px.Location = new System.Drawing.Point(56, 28);
+            this.Lb_Px.Name = "Lb_Px";
+            this.Lb_Px.Size = new System.Drawing.Size(30, 13);
+            this.Lb_Px.TabIndex = 1;
+            this.Lb_Px.Text = "<px>";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(12, 58);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(47, 13);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Z Value:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 43);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(47, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Y Value:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(12, 28);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "X Value:";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -462,114 +570,6 @@
             this.LK_Definir.Visible = false;
             this.LK_Definir.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LK_Definir_LinkClicked);
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 28);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "X Value:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 43);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(47, 13);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Y Value:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(12, 58);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(47, 13);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Z Value:";
-            // 
-            // Lb_Px
-            // 
-            this.Lb_Px.AutoSize = true;
-            this.Lb_Px.Location = new System.Drawing.Point(56, 28);
-            this.Lb_Px.Name = "Lb_Px";
-            this.Lb_Px.Size = new System.Drawing.Size(30, 13);
-            this.Lb_Px.TabIndex = 1;
-            this.Lb_Px.Text = "<px>";
-            // 
-            // Lb_Py
-            // 
-            this.Lb_Py.AutoSize = true;
-            this.Lb_Py.Location = new System.Drawing.Point(56, 43);
-            this.Lb_Py.Name = "Lb_Py";
-            this.Lb_Py.Size = new System.Drawing.Size(30, 13);
-            this.Lb_Py.TabIndex = 1;
-            this.Lb_Py.Text = "<py>";
-            // 
-            // Lb_Pz
-            // 
-            this.Lb_Pz.AutoSize = true;
-            this.Lb_Pz.Location = new System.Drawing.Point(56, 58);
-            this.Lb_Pz.Name = "Lb_Pz";
-            this.Lb_Pz.Size = new System.Drawing.Size(30, 13);
-            this.Lb_Pz.TabIndex = 1;
-            this.Lb_Pz.Text = "<pz>";
-            // 
-            // Tb_MomentoXVetor
-            // 
-            this.Tb_MomentoXVetor.Location = new System.Drawing.Point(152, 29);
-            this.Tb_MomentoXVetor.Name = "Tb_MomentoXVetor";
-            this.Tb_MomentoXVetor.ReadOnly = true;
-            this.Tb_MomentoXVetor.Size = new System.Drawing.Size(363, 20);
-            this.Tb_MomentoXVetor.TabIndex = 2;
-            this.Tb_MomentoXVetor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Tb_MomentoGeral
-            // 
-            this.Tb_MomentoGeral.Location = new System.Drawing.Point(152, 65);
-            this.Tb_MomentoGeral.Name = "Tb_MomentoGeral";
-            this.Tb_MomentoGeral.ReadOnly = true;
-            this.Tb_MomentoGeral.Size = new System.Drawing.Size(485, 20);
-            this.Tb_MomentoGeral.TabIndex = 2;
-            this.Tb_MomentoGeral.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Cb_Vetores
-            // 
-            this.Cb_Vetores.FormattingEnabled = true;
-            this.Cb_Vetores.Location = new System.Drawing.Point(521, 29);
-            this.Cb_Vetores.Name = "Cb_Vetores";
-            this.Cb_Vetores.Size = new System.Drawing.Size(116, 21);
-            this.Cb_Vetores.TabIndex = 3;
-            this.Cb_Vetores.SelectedIndexChanged += new System.EventHandler(this.Cb_Vetores_SelectedIndexChanged);
-            // 
-            // Lb_MomentoXVetor
-            // 
-            this.Lb_MomentoXVetor.AutoSize = true;
-            this.Lb_MomentoXVetor.Location = new System.Drawing.Point(149, 14);
-            this.Lb_MomentoXVetor.Name = "Lb_MomentoXVetor";
-            this.Lb_MomentoXVetor.Size = new System.Drawing.Size(126, 13);
-            this.Lb_MomentoXVetor.TabIndex = 4;
-            this.Lb_MomentoXVetor.Text = "Momento para - <vector>";
-            // 
-            // Vetor
-            // 
-            this.Vetor.AutoSize = true;
-            this.Vetor.Location = new System.Drawing.Point(521, 14);
-            this.Vetor.Name = "Vetor";
-            this.Vetor.Size = new System.Drawing.Size(32, 13);
-            this.Vetor.TabIndex = 4;
-            this.Vetor.Text = "Vetor";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(149, 51);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(129, 13);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "Momento geral das forças";
-            // 
             // Controle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,6 +593,8 @@
             this.Name = "Controle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Controle - Resultantes";
+            this.Load += new System.EventHandler(this.Controle_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Controle_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Vetores)).EndInit();

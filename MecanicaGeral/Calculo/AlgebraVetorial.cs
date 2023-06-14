@@ -126,9 +126,9 @@ namespace MecanicaGeral.Calculo
 
             if (VariaveisGlobais.Unidades.UnidadeMomento == ConvencaoUnidades.MomentunUnit.KnM)
             {
-                Ri = Math.Abs(Vector.GetPoint(0).GetX * (Vector.UnidadeDeMedida == MetricUnit.M ? 1 : (1 / 100)) - P.GetX);    //i
-                Rj = Math.Abs(Vector.GetPoint(0).GetY * (Vector.UnidadeDeMedida == MetricUnit.M ? 1 : (1 / 100)) - P.GetY);    //j
-                Rk = Math.Abs(Vector.GetPoint(0).GetZ * (Vector.UnidadeDeMedida == MetricUnit.M ? 1 : (1 / 100)) - P.GetZ);    //k
+                Ri = Math.Abs(Vector.GetPoint(0).GetX * (Vector.UnidadeDeMedida == MetricUnit.M ? 1 : (1d / 100d)) - P.GetX);    //i
+                Rj = Math.Abs(Vector.GetPoint(0).GetY * (Vector.UnidadeDeMedida == MetricUnit.M ? 1 : (1d / 100d)) - P.GetY);    //j
+                Rk = Math.Abs(Vector.GetPoint(0).GetZ * (Vector.UnidadeDeMedida == MetricUnit.M ? 1 : (1d / 100d)) - P.GetZ);    //k
             }
             else
             {
@@ -141,9 +141,9 @@ namespace MecanicaGeral.Calculo
 
             if (VariaveisGlobais.Unidades.UnidadeMomento == ConvencaoUnidades.MomentunUnit.KnM)
             {
-                Fx = Vector.GetComponents[0] * (Vector.UnidadeDeForca == ForceUnit.Kn ? 1 : 1 / 1000);
-                Fy = Vector.GetComponents[1] * (Vector.UnidadeDeForca == ForceUnit.Kn ? 1 : 1 / 1000);
-                Fz = Vector.GetComponents[2] * (Vector.UnidadeDeForca == ForceUnit.Kn ? 1 : 1 / 1000);
+                Fx = Vector.GetComponents[0] * (Vector.UnidadeDeForca == ForceUnit.Kn ? 1 : 1d / 1000d);
+                Fy = Vector.GetComponents[1] * (Vector.UnidadeDeForca == ForceUnit.Kn ? 1 : 1d / 1000d);
+                Fz = Vector.GetComponents[2] * (Vector.UnidadeDeForca == ForceUnit.Kn ? 1 : 1d / 1000d);
             }
             else
             {
